@@ -11,6 +11,19 @@ import {
   VALUES_TYPE_USER_INPUT as USER_INPUT,
 } from './constants';
 
+
+const customMessage = {
+  title: 'Custom code',
+  description: 'Write your own custom cleaning function. \
+    Add @transformer_action, then begin typing Python code inside a function. \
+    You may refer to the current dataset as df.',
+  code: {
+    default: CODE_EXAMPLE,
+    multiline: true,
+    values: USER_INPUT,
+  },
+};
+
 const columns: {
   [key: string]: FormConfigType;
 } = {
@@ -19,17 +32,7 @@ const columns: {
     title: 'Clean column name',
     description: 'Lowercase the column name and replace special characters with an underscore.',
   },
-  custom: {
-    title: 'Custom code',
-    description: 'Write your own custom cleaning function. \
-      Add @transformer_action, then begin typing Python code inside a function. \
-      You may refer to the current dataset as df.',
-    code: {
-      default: CODE_EXAMPLE,
-      multiline: true,
-      values: USER_INPUT,
-    },
-  },
+  custom: customMessage,
   impute: {
     title: 'Impute',
     description: 'Fill in missing values.',
@@ -138,17 +141,7 @@ const columns: {
 const rows: {
   [key: string]: FormConfigType;
 } = {
-  custom: {
-    title: 'Custom code',
-    description: 'Write your own custom cleaning function. \
-      Add @transformer_action, then begin typing Python code inside a function. \
-      You may refer to the current dataset as df.',
-    code: {
-      default: CODE_EXAMPLE,
-      multiline: true,
-      values: USER_INPUT,
-    },
-  },
+  custom: customMessage,
   drop_duplicate: {
     title: 'Drop duplicates',
     description: 'Remove rows that have repeat values from 1 or more columns.',
