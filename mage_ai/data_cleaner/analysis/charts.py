@@ -220,6 +220,8 @@ def build_time_series_data(df, features, datetime_column):
                     ))
 
             y_dict[col].append(y_data)
+        # Add number of rows for datetime column
+        y_dict[datetime_column] = dict(count=df_filtered.shape[0])
     charts = dict()
     for f, y in y_dict.items():
         charts[f] = dict(
