@@ -419,6 +419,8 @@ def launch(mage_api_key=None, host=SERVER_HOST, port=SERVER_PORT) -> None:
         api_key = mage_api_key
         sync_pipelines()
 
+    print('test change')
+
     app_kwargs = {
         'debug': False,
         'host': host,
