@@ -5,7 +5,7 @@ export function getHost() {
   const windowDefined = typeof window !== 'undefined';
   const LOCALHOST = 'localhost';
   const PORT = 5789;
-  const CLOUD_BASE_PATH = 'CLOUD_NOTEBOOK_BASE_PATH_PLACEHOLDER_';
+  const CLOUD_BASE_PATH = '/CLOUD_NOTEBOOK_BASE_PATH_PLACEHOLDER_';
 
   let host = LOCALHOST;
   let protocol = 'http://';
