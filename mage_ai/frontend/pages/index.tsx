@@ -4,16 +4,13 @@ import { useEffect } from 'react';
 const Home = () => {
   const router = useRouter();
   const queryParams = router.query;
+  const completePath = router.asPath;
+  const basePath = completePath.split('?')[0];
   let pathname = '/datasets';
-
-  const windowDefined = typeof window !== 'undefined';
-  if (windowDefined) {
-    const host = window.location.hostname;
-    const hostParts = host.split('.');
-    const domain = hostParts[hostParts.length - 1];
-    if (domain === 'aws') {
-      pathname = 'proxy/5789/datasets';
-    }
+  if (basePath && basePath !== '/') {
+    pathname = !basePath.includes('/datasets')
+      ? `${basePath}/datasets`
+      : basePath;
   }
 
   useEffect(() => {
