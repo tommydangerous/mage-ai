@@ -13,6 +13,17 @@ const Home = () => {
       : basePath;
   }
 
+  const windowDefined = typeof window !== 'undefined';
+  if (windowDefined) {
+    const host = window.location.hostname;
+    const hostParts = host.split('.');
+    const domain = hostParts[hostParts.length - 1];
+    if (domain === 'aws') {
+      const basePath = '/proxy/5789';
+      pathname = `${basePath}/datasets`;
+    }
+  }
+
   useEffect(() => {
     Router.push({
       pathname,
