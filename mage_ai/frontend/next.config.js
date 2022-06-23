@@ -1,7 +1,18 @@
 const removeImports = require('next-remove-imports')();
 
 module.exports = removeImports({
-  basePath: '/proxy/5789',
+  async rewrites() {
+    return [
+      {
+        source: '/proxy/5789/datasets',
+        destination: '/datasets',
+      },
+      {
+        source: '/proxy/5789',
+        destination: '/datasets',
+      },
+    ];
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
