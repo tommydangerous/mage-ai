@@ -7,22 +7,21 @@ const Home = () => {
   const completePath = router.asPath;
   const basePath = completePath.split('?')[0];
   let pathname = '/datasets';
-  if (basePath && basePath !== '/') {
-    pathname = !basePath.includes('/datasets')
-      ? `${basePath}/datasets`
-      : basePath;
-  }
+  // if (basePath && basePath !== '/') {
+  //   pathname = !basePath.includes('/datasets')
+  //     ? `${basePath}/datasets`
+  //     : basePath;
+  // }
 
-  const windowDefined = typeof window !== 'undefined';
-  if (windowDefined) {
-    const host = window.location.hostname;
-    const hostParts = host.split('.');
-    const domain = hostParts[hostParts.length - 1];
-    if (domain === 'aws') {
-      const basePath = '/proxy/5789';
-      pathname = `${basePath}/datasets`;
-    }
-  }
+  // const windowDefined = typeof window !== 'undefined';
+  // if (windowDefined) {
+  //   const host = window.location.hostname;
+  //   const hostParts = host.split('.');
+  //   const domain = hostParts[hostParts.length - 1];
+  //   if (domain === 'aws') {
+  //     pathname = '/proxy/5789/datasets';
+  //   }
+  // }
 
   useEffect(() => {
     Router.push({
