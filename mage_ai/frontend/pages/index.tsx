@@ -31,7 +31,7 @@ const Home = () => {
       pathname,
       query: queryParams,
     });
-  });
+  }, []);
 };
 
 export default Home;
