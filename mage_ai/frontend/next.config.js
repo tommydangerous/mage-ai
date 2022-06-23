@@ -4,11 +4,11 @@ module.exports = removeImports({
   async rewrites() {
     return [
       {
-        source: '/proxy/5789/datasets',
+        source: '/CLOUD_NOTEBOOK_BASE_PATH_PLACEHOLDER_/datasets',
         destination: '/datasets',
       },
       {
-        source: '/proxy/5789',
+        source: '/CLOUD_NOTEBOOK_BASE_PATH_PLACEHOLDER_',
         destination: '/datasets',
       },
     ];
