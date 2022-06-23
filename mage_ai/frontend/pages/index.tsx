@@ -10,6 +10,7 @@ const Home = () => {
   if (basePath && basePath !== '/') {
     pathname = `${basePath}/datasets`;
   }
+  console.log('pathname 1:', pathname);
 
   const windowDefined = typeof window !== 'undefined';
   if (windowDefined) {
@@ -24,6 +25,7 @@ const Home = () => {
   console.log('completePath:', completePath);
   console.log('basePath:', basePath);
   console.log('router pathname:', router.pathname);
+  console.log('pathname 2:', pathname);
   console.log('FE ---------------------------');
 
   useEffect(() => {
