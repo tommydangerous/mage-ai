@@ -142,3 +142,6 @@ def __update_frontend_urls_in_files(base_path, url_params):
                     s['src'] = base_path + s['src'] + url_params
                 print('scripts:', scripts)
                 print('--------------------')
+                # Write modified file
+                with open(fname, 'w') as outf:
+                    outf.write(str(soup))
