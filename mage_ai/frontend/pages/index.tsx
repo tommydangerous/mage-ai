@@ -10,6 +10,10 @@ const Home = () => {
   if (basePath && basePath !== '/') {
     pathname = `${basePath}/datasets`;
   }
+  console.log('completePath:', completePath);
+  console.log('basePath:', basePath);
+  console.log('router pathname:', router.pathname);
+  console.log('FE ---------------------------');
 
   useEffect(() => {
     Router.push({

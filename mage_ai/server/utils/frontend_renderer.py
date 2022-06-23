@@ -94,7 +94,7 @@ def update_frontend_urls(host=None, port=None, notebook_type=None, config={}):
         server_config.server_url_params = url_params
         __update_frontend_urls_in_files(base_path, url_params)
     elif notebook_type == NotebookType.SAGEMAKER:
-        base_path = f'/proxy/{port}/'
+        base_path = f'/proxy/{port}'
         __update_frontend_urls_in_files(base_path, None)
 
 
@@ -105,6 +105,10 @@ def __update_frontend_urls_in_files(base_path, url_params):
     base_path = base_path or ''
     url_params = url_params or ''
     for root, dirnames, filenames in os.walk(FRONTEND_DIST_PATH):
+        print('--- root:', root)
+        print('--- dirnames:', dirnames)
+        print('--- filesnames:', filenames)
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         for filename in filenames:
             if filename.endswith('.html'):
                 fname = os.path.join(root, filename)
@@ -136,6 +140,5 @@ def __update_frontend_urls_in_files(base_path, url_params):
                         ),
                     )
                     s['src'] = base_path + s['src'] + url_params
-                # Write modified file
-                with open(fname, 'w') as outf:
-                    outf.write(str(soup))
+                print('scripts:', scripts)
+                print('--------------------')

@@ -45,8 +45,8 @@ def launch(
         )
     elif notebook_type == NotebookType.SAGEMAKER:
         update_frontend_urls(
-            host=host,
-            port=port,
+            host=iframe_host,
+            port=iframe_port,
             notebook_type=notebook_type,
             config=config,
         )
