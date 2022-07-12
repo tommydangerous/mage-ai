@@ -194,6 +194,15 @@ export const List = build([{
   viewBox: '0 0 12 12',
 });
 
+export const MageLogo = build([{
+  d: 'M12.5997 2H16L9.70004 14H6.2998l6.2999-12z',
+  opacity: '0.4',
+}, {
+  d: 'M9.70015 2H6.29988L0 14h3.40024l2.89964-5.52321V14h3.40024V2.00007L9.70015 2zM12.5998 2H16v12h-3.4002V2z',
+}], {
+  viewBox: '0 0 16 16',
+});
+
 export const NavData = build([
   {
     d: 'M12.5 1.95402L9.39478 7h6.21042L12.5 1.95402zM8 13.2267V8H3.14661L8 13.2267z',
